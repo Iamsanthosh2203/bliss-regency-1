@@ -36,3 +36,22 @@ header {
 .none {
   display: none;
 }
+
+#spa:hover {
+  background-color: black;
+  color: white;
+}
+
+#spa:hover svg path {
+  fill: white;
+}
+
+#grill,
+#spa {
+  transition: all;
+  transition-duration: 700ms;
+}
+
+#grill:hover svg path {
+  fill: white;
+}

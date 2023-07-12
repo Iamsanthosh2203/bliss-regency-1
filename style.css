@@ -171,31 +171,6 @@ button .fas {
   background: #272727;
 }
 
-/* Background Image for mobile */
-/* Media query for mobile devices */
-@media only screen and (max-width: 767px) {
-  header {
-    background-size: cover;
-    background-position: center;
-  }
-  #divGrid {
-    grid-column-start: 1;
-    grid-column-end: 4;
-  }
-  .image-container {
-    background-image: linear-gradient(
-        to right bottom,
-        rgba(0, 0, 0, 0.253),
-        rgba(0, 0, 0, 0.253)
-      ),
-      url("assests/ALIS5798\ 1.png");
-
-    overflow: hidden;
-    background-size: cover;
-    background-position: center;
-  }
-}
-
 .slideshow-header {
   background-image: url("royal-suite/1.JPG");
   animation: slideshow 20s infinite;
@@ -225,4 +200,62 @@ button .fas {
   border-radius: 100%;
   background: white;
   cursor: pointer;
+}
+
+/* Background Image for mobile */
+/* Media query for mobile devices */
+@media only screen and (max-width: 767px) {
+  header {
+    background-size: cover;
+    background-position: center;
+  }
+  #divGrid {
+    grid-column-start: 1;
+    grid-column-end: 4;
+  }
+  .image-container {
+    background-image: linear-gradient(
+        to right bottom,
+        rgba(0, 0, 0, 0.253),
+        rgba(0, 0, 0, 0.253)
+      ),
+      url("assests/ALIS5798\ 1.png");
+
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .slideshow-header {
+    background-image: url("royal-suite/1.JPG");
+    background-position: center;
+    background-size: cover;
+    animation: slideshow 20s infinite;
+  }
+
+  @keyframes slideshow {
+    0% {
+      background-image: url("royal-suite/1.JPG");
+      background-position: center;
+      background-size: cover;
+    }
+
+    33% {
+      background-image: url("dulex-room/1.JPG");
+      background-position: center;
+      background-size: cover;
+    }
+
+    66% {
+      background-image: url("executive-twinbed/1.JPG");
+      background-position: center;
+      background-size: cover;
+    }
+
+    100% {
+      background-image: url("royal-suite/1.JPG");
+      background-position: center;
+      background-size: cover;
+    }
+  }
 }

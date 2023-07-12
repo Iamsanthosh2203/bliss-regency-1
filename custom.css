@@ -9,7 +9,7 @@
 .custom-slide {
   position: absolute;
   top: 0;
-  width: 55%;
+  width: 50%;
   height: 30rem;
   display: flex;
   align-items: center;
@@ -42,7 +42,7 @@
 }
 
 .custom-prev {
-  left: 1.5rem;
+  left: 4.5rem;
   transform: translate(-50%, -50%);
 }
 

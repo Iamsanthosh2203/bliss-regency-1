@@ -3,147 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Executive Twin Bed</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;500;700&family=IBM+Plex+Sans:wght@300;400;500&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Ubuntu:wght@300;500;700&family=Ysabeau+Infant:ital,wght@0,100;0,700;1,500&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="royal-suite.css" />
-    <link rel="stylesheet" href="test.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+    <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   </head>
-  <body>
-    <div class="custom-slider bg-[#F9F7F5]">
-      <div class="custom-slide">
-        <!-- Comments Section -->
-        <div class="flex flex-col px-32 gap-6 ibm-font text-center text-xl">
-          <div class="flex flex-col gap-5">
-            <div class="h-80 w-[30rem]">
-              <img src="royal-suite/1.JPG" alt="" srcset="" />
-            </div>
-            <p class="font-bold tracking-widest">Royal Suite</p>
-          </div>
-        </div>
-      </div>
-      <div class="custom-slide">
-        <!-- Comments Section -->
-        <div class="flex flex-col px-32 gap-6 ibm-font text-center text-xl">
-          <div class="flex flex-col gap-5">
-            <div class="h-80 w-[30rem]">
-              <img src="dulex-room/1.JPG" alt="" srcset="" />
-            </div>
-            <p class="font-bold tracking-widest">Dulex Rooms</p>
-          </div>
-        </div>
-      </div>
-      <div class="custom-slide">
-        <!-- Comments Section -->
-        <div class="flex flex-col px-32 gap-6 ibm-font text-center text-xl">
-          <div class="flex flex-col gap-5">
-            <div class="h-80 w-[30rem]">
-              <img src="executive-room/1.JPG" alt="" srcset="" />
-            </div>
-            <p class="font-bold tracking-widest">Executive Rooms</p>
-          </div>
-        </div>
-      </div>
-      <div class="custom-slide">
-        <!-- Comments Section -->
-        <div class="flex flex-col px-32 gap-6 ibm-font text-center text-xl">
-          <div class="flex flex-col gap-5">
-            <div class="h-80 w-[30rem]">
-              <img src="executive-twinbed/1.JPG" alt="" srcset="" />
-            </div>
-            <p class="font-bold tracking-widest">Executive Twinbed</p>
-          </div>
-        </div>
-      </div>
-
-      <button class="custom-btn custom-btn-slide custom-prev">
-        <i class="fas fa-3x fa-chevron-circle-left"></i>
-      </button>
-      <button class="custom-btn custom-btn-slide custom-next">
-        <i class="fas fa-3x fa-chevron-circle-right"></i>
-      </button>
+  <body class="bg-black h-screen flex justify-center">
+    <div class="flex w-[70%] h-[500px] gap-6 justify-center">
+      <div class="bg-blue-800 h-[600px] w-[600px] basis-[50%]"></div>
+      <div class="bg-blue-800 h-[600px] w-[600px] basis-[50%]"></div>
+      <div class="bg-blue-800 h-[600px] w-[600px] basis-[50%]"></div>
+      <div class="bg-red-800 h-[600px] w-[600px] basis-[50%]"></div>
+      <div class="bg-red-800 h-[600px] w-[600px] basis-[50%]"></div>
+      <div class="bg-red-800 h-[600px] w-[600px] basis-[50%]"></div>
     </div>
-    <div class="custom-dots-container bg-[#F9F7F5]">
-      <span class="custom-dot active" data-slide="0"></span>
-      <span class="custom-dot" data-slide="1"></span>
-      <span class="custom-dot" data-slide="2"></span>
-      <span class="custom-dot" data-slide="3"></span>
-    </div>
-
-    <script>
-      function CustomSlider() {
-        const customSlides = document.querySelectorAll(".custom-slide");
-        const customPrevBtn = document.querySelector(".custom-prev");
-        const customNextBtn = document.querySelector(".custom-next");
-        const customDotsContainer = document.querySelector(
-          ".custom-dots-container"
-        );
-        let currentSlide = 0;
-
-        const activateDot = function (slide) {
-          document
-            .querySelectorAll(".custom-dot")
-            .forEach((dot) => dot.classList.remove("active"));
-          document
-            .querySelector(`.custom-dot[data-slide="${slide}"]`)
-            .classList.add("active");
-        };
-        activateDot(currentSlide);
-
-        const changeSlide = function (slides) {
-          customSlides.forEach(
-            (slide, index) =>
-              (slide.style.transform = `translateX(${100 * (index - slides)}%)`)
-          );
-        };
-        changeSlide(currentSlide);
-
-        customNextBtn.addEventListener("click", function () {
-          currentSlide++;
-          if (customSlides.length - 1 < currentSlide) {
-            currentSlide = 0;
-          }
-          changeSlide(currentSlide);
-          activateDot(currentSlide);
-        });
-
-        customPrevBtn.addEventListener("click", function () {
-          currentSlide--;
-          if (currentSlide < 0) {
-            currentSlide = customSlides.length - 1;
-          }
-          changeSlide(currentSlide);
-          activateDot(currentSlide);
-        });
-
-        customDotsContainer.addEventListener("click", function (e) {
-          if (e.target.classList.contains("custom-dot")) {
-            const slide = e.target.dataset.slide;
-            changeSlide(slide);
-            activateDot(slide);
-          }
-        });
-      }
-
-      CustomSlider();
-
-      AOS.init({
-        duration: 1200,
-      });
-    </script>
   </body>
 </html>
