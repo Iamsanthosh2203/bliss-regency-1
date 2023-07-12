@@ -1,0 +1,65 @@
+html {
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+html,
+body {
+  overflow-x: hidden;
+}
+header {
+  height: 100vh;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(0, 0, 0, 0.253),
+      rgba(0, 0, 0, 0.253)
+    ),
+    url("assests/bed1\ 1.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+nav {
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  /* filter: blur(4px); */
+}
+.blur-back {
+  background: linear-gradient(
+    90deg,
+    hsla(186, 33%, 94%, 1) 0%,
+    hsla(216, 41%, 79%, 1) 100%
+  );
+  backdrop-filter: blur(30px);
+
+  color: black;
+  z-index: 100;
+}
+.hidden {
+  display: none;
+}
+#blurryscroll {
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  /* filter: blur(4px); */
+}
+.ibm-font {
+  font-family: "IBM Plex Sans", sans-serif;
+}
+.old-font {
+  font-family: "Old Standard TT";
+}
+.overlock-font {
+  font-family: "Overlock SC", cursive;
+}
+.none {
+  display: hidden;
+}

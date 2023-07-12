@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bliss Agency</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;500;700&family=IBM+Plex+Sans:wght@300;400;500&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Ubuntu:wght@300;500;700&family=Ysabeau+Infant:ital,wght@0,100;0,700;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Flat Picker -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+    <link rel="stylesheet" href="custom.css" />
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header
+      class="h-screen text-white bg-fixed w-full relative slideshow-header"
+    >
+      <!-- Navigation Section -->
+      <div id="blurryscroll" aria-hidden="true"></div>
+      <nav
+        class="pt-3 px-5 flex justify-between items-center pb-3 border-b border-white sticky z-10 bg-fixed"
+      >
+        <img
+          class="w-[20%] md:w-[7%]"
+          src="assests/logo blis 1.png"
+          alt=""
+          srcset=""
+        />
+        <div class="gap-6 links hidden md:flex">
+          <a href="index.html" class="underline underline-offset-8">HOME</a>
+          <a href="about.html">ABOUT US</a>
+          <a href="rooms.html">ROOMS</a>
+          <a href="services.html">SERVICES</a>
+          <a href="#">RESTAURANT</a>
+          <a href="#">CONTACT</a>
+        </div>
+        <button
+          onclick="window.location.href='booking.html'"
+          class="bg-transparent py-3 px-5 border rounded-full hidden md:block"
+        >
+          BOOK NOW
+        </button>
+
+        <div class="flex flex-row-reverse gap-3 md:hidden">
+          <button id="menuBtn" class="text-xl">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <button
+            onclick="window.location.href='booking.html'"
+            class="bg-transparent py-2 px-2 text-sm border rounded-full block md:hidden"
+          >
+            BOOK NOW
+          </button>
+        </div>
+      </nav>
+
+      <!-- Header Section -->
+      <section
+        id="content"
+        class="py-[3rem] pt-[13rem] md:pt-[9rem] pl-8 md:pl-[10rem] pr-8 md:pr-[28rem] flex flex-col justify-center md:justify-normal"
+      >
+        <div class="flex flex-col gap-5">
+          <p data-aos="fade-right" class="tracking-widest font-normal">
+            BEST HOTEL WITH COZY ROOMS
+          </p>
+          <h1 data-aos="zoom-out-down" class="heading text-3xl md:text-6xl">
+            Just Exprience A New <br />Level Of Luxury.
+          </h1>
+        </div>
+        <button
+          onclick="window.location.href='rooms.html'"
+          data-aos="fade-right"
+          class="bg-transparent rounded-full px-7 w-full md:w-[35%] border py-4 mt-6 mb-4 hover:bg-white hover:text-black duration-500"
+        >
+          Explore Rooms
+        </button>
+      </section>
+
+      <div class="flex justify-center gap-5">
+        <span class="dot-white image-1"></span>
+        <span class="dot-white image-2"></span>
+        <span class="dot-white image-3"></span>
+      </div>
+
+      <div
+        id="menu"
+        class="h-full w-full bg-black text-white absolute top-0 z-50 hidden flex-col justify-center items-center px-14 gap-4 md:hidden"
+      >
+        <button id="closeBtn" class="flex w-full">
+          <i
+            class="fa-solid fa-xmark self-end absolute top-[20px] right-[20px] text-4xl"
+          ></i>
+        </button>
+
+        <a class="text-4xl old-font" href="index.html">Home</a>
+        <a class="text-4xl old-font" href="about.html">About</a>
+        <a class="text-4xl old-font" href="rooms.html">Rooms</a>
+        <a class="text-4xl old-font" href="services.html">Services</a>
+        <a class="text-4xl old-font" href="">Resturant</a>
+        <a class="text-4xl old-font" href="">Contact</a>
+      </div>
+    </header>
+    <!-- About Section -->
+    <section
+      class="min-h-screen flex px-3 py-3 md:px-[9rem] md:py-[3rem] flex-col bg-fixed"
+    >
+      <!-- First Section -->
+      <div
+        class="grid grid-cols-3 md:grid-cols-6 grid-rows-2 md:grid-rows-1 gap-4 pl-6 md:pl-0 mb-[3.5rem]"
+      >
+        <!-- 1 -->
+        <div class="flex flex-col gap-3">
+          <p
+            data-aos="fade-right"
+            class="tracking-wide text-[#474341] ibm-font font-light"
+          >
+            ARRIVAL
+          </p>
+          <div class="flex gap-5 items-center">
+            <p
+              id="arrivalDate"
+              data-aos="fade-down"
+              class="text-4xl md:text-7xl old-font"
+            >
+              24
+            </p>
+            <span
+              id="arrivalMonth"
+              data-aos="fade-right"
+              class="text-lg ibm-font"
+              >Jan</span
+            >
+          </div>
+          <input
+            data-aos="fade-left"
+            id="arrival"
+            type="datetime"
+            placeholder="Click For Arrival"
+            value=""
+            class="text-lg ibm-font placeholder:text-black cursor-pointer"
+          />
+        </div>
+
+        <!-- 2 -->
+        <div class="flex flex-col gap-3">
+          <p
+            data-aos="fade-right"
+            class="tracking-wide text-[#474341] ibm-font font-light"
+          >
+            DEPARTURE
+          </p>
+          <div class="flex gap-5 items-center">
+            <p
+              id="departureDate"
+              data-aos="fade-down"
+              class="text-4xl md:text-7xl old-font"
+            >
+              24
+            </p>
+            <span
+              id="departureMonth"
+              data-aos="fade-right"
+              class="text-lg ibm-font"
+              >Jan</span
+            >
+          </div>
+          <input
+            data-aos="fade-left"
+            id="departure"
+            type="departure"
+            placeholder="Click For Departure"
+            class="text-lg ibm-font placeholder:text-black cursor-pointer"
+          />
+        </div>
+
+        <!-- 3 -->
+        <div class="flex flex-col gap-3">
+          <p
+            data-aos="fade-right"
+            class="tracking-wide text-[#474341] ibm-font font-light"
+          >
+            ROOMS
+          </p>
+          <div class="flex gap-2 items-center">
+            <div data-aos="fade-right">
+              <button id="rooms-dec-btn">
+                <img
+                  src="assests/Vector (1).png"
+                  class="-rotate-90"
+                  alt=""
+                  srcset=""
+                />
+              </button>
+            </div>
+            <p
+              id="rooms-num"
+              data-aos="fade-down"
+              class="text-4xl md:text-7xl old-font"
+            >
+              1
+            </p>
+            <div data-aos="fade-right">
+              <button id="rooms-inc-btn">
+                <img
+                  src="assests/Vector (2).png"
+                  alt=""
+                  class="-rotate-90"
+                  srcset=""
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="flex flex-col gap-3">
+          <p
+            data-aos="fade-right"
+            class="tracking-wide text-[#474341] ibm-font font-light"
+          >
+            GUESTS
+          </p>
+          <div class="flex gap-2 items-center">
+            <div data-aos="fade-right">
+              <button id="guests-dec-btn">
+                <img
+                  src="assests/Vector (1).png"
+                  class="-rotate-90"
+                  alt=""
+                  srcset=""
+                />
+              </button>
+            </div>
+            <p
+              id="guests-num"
+              data-aos="fade-down"
+              class="text-4xl md:text-7xl old-font"
+            >
+              1
+            </p>
+            <div data-aos="fade-right">
+              <button id="guests-inc-btn">
+                <img
+                  src="assests/Vector (2).png"
+                  alt=""
+                  class="-rotate-90"
+                  srcset=""
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="flex flex-col gap-3 col-span-2 md:col-span-1">
+          <p
+            data-aos="fade-right"
+            class="tracking-wide text-[#474341] ibm-font font-light"
+          >
+            CHILDREN
+          </p>
+          <div class="flex gap-2 items-center">
+            <div data-aos="fade-right">
+              <button id="children-dec-btn">
+                <img
+                  src="assests/Vector (1).png"
+                  class="-rotate-90"
+                  alt=""
+                  srcset=""
+                />
+              </button>
+            </div>
+            <p
+              id="children-num"
+              data-aos="fade-down"
+              class="text-4xl md:text-7xl old-font"
+            >
+              1
+            </p>
+            <div data-aos="fade-right">
+              <button id="children-inc-btn">
+                <img
+                  src="assests/Vector (2).png"
+                  alt=""
+                  class="-rotate-90"
+                  srcset=""
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6 -->
+        <div id="divGrid" class="flex flex-col self-center">
+          <button
+            data-aos="fade-left"
+            class="py-3 px-4 bg-[#27221F] rounded-full text-white ibm-font"
+          >
+            Check availability
+          </button>
+        </div>
+      </div>
+
+      <!-- Second Section -->
+      <div class="block gap-4">
+        <h2 data-aos="fade-right" class="old-font text-4xl">
+          Explore Our Rooms
+        </h2>
+
+        <div class="custom-slider">
+          <div class="custom-slide">
+            <!-- Comments Section -->
+            <div
+              class="flex flex-col px-8 md:px-32 gap-6 ibm-font text-center text-xl"
+            >
+              <div class="flex flex-col gap-5">
+                <div class="md:h-80 md:w-[30rem] h-[12rem] w-[19rem]">
+                  <img src="royal-suite/1.JPG" alt="" srcset="" />
+                </div>
+                <p class="old-font tracking-widest">Royal Suite</p>
+              </div>
+            </div>
+          </div>
+          <div class="custom-slide">
+            <!-- Comments Section -->
+            <div class="flex flex-col px-32 gap-6 ibm-font text-center text-xl">
+              <div class="flex flex-col gap-5">
+                <div class="md:h-80 md:w-[30rem] h-[12rem] w-[19rem]">
+                  <img src="dulex-room/1.JPG" alt="" srcset="" />
+                </div>
+                <p class="old-font tracking-widest">Dulex Rooms</p>
+              </div>
+            </div>
+          </div>
+          <div class="custom-slide">
+            <!-- Comments Section -->
+            <div class="flex flex-col px-32 gap-6 ibm-font text-center text-xl">
+              <div class="flex flex-col gap-5">
+                <div class="md:h-80 md:w-[30rem] h-[12rem] w-[19rem]">
+                  <img src="executive-room/1.JPG" alt="" srcset="" />
+                </div>
+                <p class="old-font tracking-widest">Executive Rooms</p>
+              </div>
+            </div>
+          </div>
+          <div class="custom-slide">
+            <!-- Comments Section -->
+            <div class="flex flex-col px-32 gap-6 ibm-font text-center text-xl">
+              <div class="flex flex-col gap-5">
+                <div class="md:h-80 md:w-[30rem] h-[12rem] w-[19rem]">
+                  <img src="executive-twinbed/1.JPG" alt="" srcset="" />
+                </div>
+                <p class="old-font tracking-widest">Executive Twinbed</p>
+              </div>
+            </div>
+          </div>
+
+          <button class="custom-btn custom-btn-slide custom-prev">
+            <i class="fas fa-3x fa-chevron-circle-left text-white"></i>
+          </button>
+          <button
+            class="custom-btn custom-btn-slide custom-next h-full bg-white -mr-6"
+          >
+            <i class="fas fa-3x fa-chevron-circle-right"></i>
+          </button>
+        </div>
+        <div class="custom-dots-container bg-[#F9F7F5]">
+          <span class="custom-dot active" data-slide="0"></span>
+          <span class="custom-dot" data-slide="1"></span>
+          <span class="custom-dot" data-slide="2"></span>
+          <span class="custom-dot" data-slide="3"></span>
+        </div>
+      </div>
+
+      <div class="flex justify-center mt-4">
+        <button
+          onclick="window.location.href='rooms.html'"
+          data-aos="fade-right"
+          class="p-6 px-[5rem] ibm-font rounded-full border border-[#D2D2D2] text-[#27221F] hover:bg-[#27221F] duration-300 hover:text-white"
+        >
+          View All Rooms
+        </button>
+      </div>
+    </section>
+
+    <!-- Welcome Page -->
+    <section
+      class="welcome flex flex-col justify-center items-center px-10 py-10 md:py-44 h-auto md:h-screen text-white gap-5 md:px-44 bg-fixed"
+    >
+      <h3 data-aos="fade-up" class="old-font text-4xl md:text-6xl text-center">
+        Welcome To Bliss Regency
+      </h3>
+      <p data-aos="fade-up" class="text-center ibm-font text-lg md:text-xl">
+        Your haven of luxury and comfort in the heart of Palakkad. We pride
+        ourselves on providing exceptional hospitality and a wide range of
+        accommodation options to suit every Business person’s and a traveler’s
+        needs.
+      </p>
+      <button
+        onclick="window.location.href='about.html'"
+        data-aos="fade-up"
+        class="p-6 px-[5rem] ibm-font rounded-full border border-[#D2D2D2] text-white hover:bg-white hover:text-black duration-300"
+      >
+        About Us
+      </button>
+    </section>
+
+    <!-- Offer Page -->
+    <section
+      class="flex justify-between pr-6 mb-16 py-8 md:py-0 px-6 md:px-0 bg-[#F9F7F5]"
+    >
+      <div class="basis-[30%] hidden md:block">
+        <img
+          data-aos="fade-right"
+          class="w-full h-full"
+          src="assests/ALIS5798 1.png"
+          alt=""
+          srcset=""
+        />
+      </div>
+
+      <div
+        class="flex flex-col gap-5 justify-center basis-[100%] md:basis-[60%]"
+      >
+        <h3
+          data-aos="fade-left"
+          class="old-font text-4xl text-center md:text-left"
+        >
+          What Services We Offer
+        </h3>
+        <p data-aos="fade-left" class="ibm-font">
+          Bliss Regency in Palakkad is the ultimate level of luxury. In
+          our rooms, you'll find air conditioning, a kettle, and a private couch
+          area. Keep yourself entertained with a flat-screen TV and connected
+          with complimentary WiFi. Enjoy a comfortable night's sleep on our
+          king-size beds and take advantage of amenities like as a refrigerator,
+          laundry services, and other necessities. Bliss Regency in Palakkad
+          offers a pleasant experience where elegance meets convenience.
+        </p>
+
+        <div
+          data-aos="fade-up-left"
+          class="grid grid-cols-1 md:grid-cols-3 grid-rows-1 pr-0 md:pr-[8rem] gap-4 md:gap-0"
+        >
+          <div class="flex items-center gap-3 basis-[30%]">
+            <img src="assests/king-bed.png" class="md:w-8 h-8" alt="" />
+            <p class="old-font text-lg">King Size Bed</p>
+          </div>
+
+          <div class="flex items-center gap-3 basis-[30%]">
+            <i class="fa-solid fa-couch md:w-8 h-8 text-xl"></i>
+            <p class="old-font text-lg">Personal Couch</p>
+          </div>
+
+          <div class="flex items-center gap-3 basis-[30%]">
+            <i class="fa-solid fa-wifi md:w-8 h-8 text-xl"></i>
+            <p class="old-font text-lg">Pool</p>
+          </div>
+        </div>
+
+        <div
+          data-aos="fade-up-left"
+          class="grid grid-cols-1 md:grid-cols-3 grid-rows-1 pr-0 md:pr-[8rem] gap-4 md:gap-0"
+        >
+          <div class="flex items-center gap-3 basis-[30%]">
+            <img src="assests/washing.png" class="w-8 h-8" alt="" />
+            <p class="old-font text-lg">Laundry Service</p>
+          </div>
+
+          <div class="flex items-center gap-3 basis-[30%]">
+            <img src="assests/tv.png" class="w-8 h-8" alt="" />
+            <p class="old-font text-lg">Flat Screen TV</p>
+          </div>
+
+          <div class="flex items-center gap-3 basis-[30%]">
+            <img src="assests/fridge.png" class="w-8 h-8" alt="" />
+            <p class="old-font text-lg">Refigerator</p>
+          </div>
+        </div>
+
+        <div>
+          <button
+            onclick="window.location.href='services.html'"
+            data-aos="fade-up"
+            class="mt-4 p-4 px-[5rem] ibm-font rounded-full border bg-[#27221F] border-[#27221F] text-white hover:bg-white duration-300 hover:text-[#27221F]"
+          >
+            View All Services
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section class="flex flex-col px-4 md:px-[15rem] gap-5 bg-fixed">
+      <div>
+        <h4 data-aos="zoom-in-up" class="text-4xl old-font">
+          Our Achievements
+        </h4>
+        <p data-aos="zoom-in-up" class="ibm-font font-light text-[#474341]">
+          We are the top leading hotel with a good experiences.
+        </p>
+      </div>
+      <div class="mt-6 flex justify-between">
+        <div class="flex flex-col items-center md:items-start">
+          <p
+            data-aos="zoom-in-right"
+            class="text-2xl md:text-6xl old-font text-[#27221F] font-bold"
+          >
+            1.5K
+          </p>
+          <p
+            data-aos="zoom-in-right"
+            class="font-light ibm-font text-[#474341] text-center"
+          >
+            HAPPY CLIENTS
+          </p>
+        </div>
+
+        <div class="flex flex-col items-center md:items-start">
+          <p
+            data-aos="zoom-in-right"
+            class="text-2xl md:text-6xl old-font text-[#27221F] font-bold"
+          >
+            16
+          </p>
+          <p
+            data-aos="zoom-in-right"
+            class="font-light ibm-font text-[#474341] text-center"
+          >
+            TOTAL ROOMS
+          </p>
+        </div>
+
+        <div class="flex flex-col items-center md:items-start">
+          <p
+            data-aos="zoom-in-right"
+            class="text-2xl md:text-6xl old-font text-[#27221F] font-bold"
+          >
+            5
+          </p>
+          <p
+            data-aos="zoom-in-right"
+            class="font-light ibm-font text-[#474341] text-center"
+          >
+            AWARD WONS
+          </p>
+        </div>
+
+        <div class="flex flex-col items-center md:items-start">
+          <p
+            data-aos="zoom-in-right"
+            class="text-2xl md:text-6xl old-font text-[#27221F] font-bold"
+          >
+            30
+          </p>
+          <p
+            data-aos="zoom-in-right"
+            class="font-light ibm-font text-[#474341] text-center"
+          >
+            TEAM MEMBERS
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comments Section -->
+    <section data-aos="fade-down" class="slider bg-[#F9F7F5] mt-10">
+      <div class="slide">
+        <!-- Comments Section -->
+        <div
+          class="flex flex-col px-8 md:px-32 gap-6 ibm-font text-center text-xl"
+        >
+          <p class="text-[16px] md:text-base">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore,
+            porro. Nobis eaque consequuntur autem atque. Quaerat repellat maxime
+            officiis deserunt nobis, cumque ipsum. Voluptate neque quas nobis
+            similique asperiores itaque.
+          </p>
+          <p class="font-bold tracking-widest">- JASON HOOK, USA</p>
+        </div>
+      </div>
+      <div class="slide">
+        <!-- Comments Section -->
+        <div
+          class="flex flex-col px-8 md:px-32 gap-6 ibm-font text-center text-xl"
+        >
+          <p class="text-[16px] md:text-base">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore,
+            porro. Nobis eaque consequuntur autem atque. Quaerat repellat maxime
+            officiis deserunt nobis, cumque ipsum. Voluptate neque quas nobis
+            similique asperiores itaque.
+          </p>
+          <p class="font-bold tracking-widest">- JASON HOOK, USA</p>
+        </div>
+      </div>
+      <div class="slide">
+        <!-- Comments Section -->
+        <div
+          class="flex flex-col px-8 md:px-32 gap-6 ibm-font text-center text-xl"
+        >
+          <p class="text-[16px] md:text-base">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore,
+            porro. Nobis eaque consequuntur autem atque. Quaerat repellat maxime
+            officiis deserunt nobis, cumque ipsum. Voluptate neque quas nobis
+            similique asperiores itaque.
+          </p>
+          <p class="font-bold tracking-widest">- JASON HOOK, USA</p>
+        </div>
+      </div>
+      <div class="slide">
+        <!-- Comments Section -->
+        <div
+          class="flex flex-col px-8 md:px-32 gap-6 ibm-font text-center text-xl"
+        >
+          <p class="text-[16px] md:text-base">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore,
+            porro. Nobis eaque consequuntur autem atque. Quaerat repellat maxime
+            officiis deserunt nobis, cumque ipsum. Voluptate neque quas nobis
+            similique asperiores itaque.
+          </p>
+          <p class="font-bold tracking-widest">- JASON HOOK, USA</p>
+        </div>
+      </div>
+
+      <button class="btn-slide prev">
+        <i class="fas fa-3x fa-chevron-circle-left"></i>
+      </button>
+      <button class="btn-slide next">
+        <i class="fas fa-3x fa-chevron-circle-right"></i>
+      </button>
+    </section>
+    <div data-aos="fade-up" class="dots-container bg-[#F9F7F5] mb-10">
+      <span class="dot active" data-slide="0"></span>
+      <span class="dot" data-slide="1"></span>
+      <span class="dot" data-slide="2"></span>
+      <span class="dot" data-slide="3"></span>
+    </div>
+
+    <div class="h-[500px] mb-14 bg-fixed">
+      <video
+        src="https://short.ink/pOYlcsdlA"
+        class="h-[500px] w-full object-cover hidden md:block"
+        autoplay
+        loop
+      ></video>
+
+      <video
+        src="assests/DJI_0028 - (9x16).mp4"
+        class="h-[500px] w-full object-cover block md:hidden"
+        autoplay
+        loop
+      ></video>
+    </div>
+
+    <!-- Section 1 -->
+    <section class="px-4 md:px-[6rem] pt-8 md:pt-16 flex justify-between">
+      <div class="basis-[45%] hidden md:block">
+        <img
+          data-aos="fade-left"
+          src="assests/WhatsApp Image 2023-06-28 at 09.47 5.png"
+          class="h-full"
+          alt=""
+          srcset=""
+        />
+      </div>
+
+      <div class="basis-[100%] md:basis-[45%] flex flex-col items-center">
+        <div
+          data-aos="fade-right"
+          class="w-full border h-[.5px] border-[#000000] my-2"
+        ></div>
+
+        <img
+          data-aos="fade-right"
+          src="assests/logo blis 17.png"
+          width="200px"
+          alt=""
+          class="my-5"
+        />
+
+        <h5
+          data-aos="fade-right"
+          class="old-font font-xl text-center tracking-[2px]"
+        >
+          SPACIOUS STAYS <br />IN THE CITY
+        </h5>
+
+        <div
+          data-aos="fade-right"
+          class="w-[50%] border h-[.5px] border-[#000000] mt-5 my-2"
+        ></div>
+
+        <p data-aos="fade-right" class="text-center tracking-[2px] px-12">
+          Indulge in breathtaking views of Table Mountain and our harbour from
+          Cape Town’s largest hotel rooms and suites.
+        </p>
+
+        <div
+          data-aos="fade-right"
+          class="w-full border h-[.5px] border-[#000000] my-2"
+        ></div>
+      </div>
+    </section>
+
+    <!-- Get Intouch Section -->
+    <section class="my-10 px-2 md:px-6 flex">
+      <div
+        class="basis-[100%] md:basis-[60%] px-8 md:px-28 pr-0 md:pr-36 flex flex-col justify-center"
+      >
+        <h5 data-aos="fade-right" class="text-4xl old-font">Get In Touch</h5>
+        <p data-aos="fade-right" class="ibm-font">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore ipsum
+          amet id quas perferendis. Obcaecati qui tempora asperiores ipsa
+          temporibus, quod quo quam velit sit eius voluptates atque esse
+          perspiciatis!
+        </p>
+        <form class="flex flex-col gap-5 mt-8">
+          <input
+            data-aos="fade-up"
+            type="text"
+            name=""
+            id=""
+            placeholder="Write Your Message"
+            class="placeholder:text-black old-font border-b p-4"
+          />
+          <input
+            data-aos="fade-up"
+            type="text"
+            name=""
+            id=""
+            placeholder="Write Your Full Name"
+            class="placeholder:text-black old-font border-b p-4"
+          />
+          <input
+            data-aos="fade-up"
+            type="email"
+            name=""
+            id=""
+            placeholder="Write Your Email Address"
+            class="placeholder:text-black old-font border-b p-4"
+          />
+        </form>
+        <div>
+          <button
+            data-aos="fade-up"
+            class="w-[100%] md:w-auto mt-4 p-4 px-[5rem] ibm-font rounded-full border bg-[#27221F] border-[#27221F] text-white hover:bg-white duration-300 hover:text-[#27221F]"
+          >
+            Submit
+          </button>
+        </div>
+      </div>
+
+      <div class="basis-[30%] hidden md:block">
+        <img src="assests/ALIS5792 1.png" alt="" class="my-5" />
+      </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section
+      class="flex flex-col md:flex-row justify-between mt-10 px-8 md:px-24 items-center"
+    >
+      <div style="width: 100%" class="basis-[40%] mb-6 md:mb-0">
+        <iframe
+          class="w-full"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.3161978336398!2d76.65122047415612!3d10.78707665899894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba86ffc1fe3ebb9%3A0x20d924f3a185309c!2sBliss%20Regency!5e0!3m2!1sen!2sin!4v1689008362287!5m2!1sen!2sin"
+          width="600"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+
+      <div class="flex flex-col text-center gap-5">
+        <h6 data-aos="fade-up" class="text-4xl old-font">
+          Join Our Newsletter
+        </h6>
+        <p data-aos="fade-up" class="ibm-font text-[#474341]">
+          Sign up to our newsletter to receive our latest news about offers &
+          promotions.
+        </p>
+
+        <form
+          data-aos="fade-up"
+          class="signup w-full flex rounded-full border-2"
+        >
+          <input
+            id="email-input"
+            type="email"
+            class="email-login m-[9px] px-5 p-3 placeholder:text-black w-[70%] old-font"
+            placeholder="Enter Your Email Address"
+          />
+          <button
+            id="submit-button"
+            class="w-[30%] p-3 ibm-font rounded-full border bg-[#27221F] border-[#27221F] text-white hover:bg-white duration-300 hover:text-[#27221F]"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer
+      class="bg-[#F9F7F5] flex flex-col md:flex-row justify-between mt-7 md:mt-24 px-3 md:px-7 py-6 pr-4 md:pr-14 items-center md:items-start"
+    >
+      <img
+        class="w-24 md:w-[10%]"
+        src="assests/logo blis 1.png"
+        alt=""
+        srcset=""
+      />
+
+      <div class="flex flex-col w-full md:w-[10%]">
+        <p class="old-font mr-4 md:mr-0 text-xl font-bold">Quick Links</p>
+        <div
+          class="flex flex-row md:flex-col w-[100%] justify-between md:justify-normal items-center md:items-start md:w-auto md:mt-3 mt-0 text-[#474341]"
+        >
+          <a href="booking.html">Bookings</a>
+          <a href="rooms.html">Rooms</a>
+          <a href="services.html">Services</a>
+          <a href="">Contact</a>
+        </div>
+      </div>
+
+      <div class="flex flex-col my-4 md:my-0 w-full md:w-[10%]">
+        <p id="contact" class="old-font text-xl font-bold">Contact</p>
+        <p class="ibm-font">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </p>
+      </div>
+
+      <div class="flex flex-col my-4 md:my-0 w-full md:w-[25%]">
+        <p class="old-font text-xl font-bold">Get Social</p>
+        <p class="ibm-font">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </p>
+        <div class="flex gap-3 my-3">
+          <a class="p-4 border cursor-pointer hover:bg-[#E7E5E3] duration-200">
+            <img src="icons/Vector (2).png" alt="" />
+          </a>
+          <a class="p-4 border cursor-pointer hover:bg-[#E7E5E3] duration-200">
+            <img src="icons/Vector (1).png" alt="" />
+          </a>
+          <a class="p-4 border cursor-pointer hover:bg-[#E7E5E3] duration-200">
+            <img src="icons/Vector (3).png" alt="" />
+          </a>
+          <a class="p-4 border cursor-pointer hover:bg-[#E7E5E3] duration-200">
+            <img src="icons/Vector (4).png" alt="" />
+          </a>
+          <a class="p-4 border cursor-pointer hover:bg-[#E7E5E3] duration-200">
+            <img src="icons/Vector (5).png" alt="" />
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Copyright Section -->
+    <section
+      class="bg-[#F9F7F5] py-5 flex flex-col md:flex-row items-center gap-3 md:gap-0 md:items-start justify-around px-3 md:px-0"
+    >
+      <p class="text-[#474341] text-center md:text-left">
+        © 2023 Copyright Bliss regency. All rights reserved
+      </p>
+      <div class="flex">
+        <p class="text-[#474341]">Payments Method:</p>
+        <div class="flex gap-3 ml-3 items-center">
+          <img src="assests/fa-brands_cc-visa.png" alt="" />
+          <img src="assests/fa-brands_cc-mastercard.png" alt="" />
+          <img src="assests/fa-brands_cc-paypal.png" alt="" srcset="" />
+        </div>
+      </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+      flatpickr("#arrival", {});
+      flatpickr("#departure", {});
+    </script>
+    <script src="script.js"></script>
+    <script src="custom.js"></script>
+  </body>
+</html>
