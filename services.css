@@ -47,11 +47,18 @@ header {
 }
 
 #grill,
-#spa {
+#spa,
+#swimming g {
   transition: all;
   transition-duration: 700ms;
 }
 
 #grill:hover svg path {
+  fill: white;
+}
+#kettle:hover svg g path {
+  fill: white;
+}
+#balcony:hover svg {
   fill: white;
 }

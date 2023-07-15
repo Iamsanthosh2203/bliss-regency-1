@@ -22,6 +22,9 @@ setupWindow("windowGrill", "btnGrill", "grill");
 setupWindow("windowFishing", "btnFishing", "fishing");
 setupWindow("windowSpa", "btnSpa", "spa");
 setupWindow("windowBar", "btnBar", "bar");
+setupWindow("windowKettle", "btnKettle", "kettle");
+setupWindow("windowCab", "btnCab", "cab");
+setupWindow("windowBalcony", "btnBalcony", "balcony");
 
 const menuBtn = document.getElementById("menuBtn");
 const menu = document.getElementById("menu");
